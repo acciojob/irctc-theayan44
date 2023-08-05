@@ -16,13 +16,17 @@ public class PassengerService {
 
     public Integer addPassenger(Passenger passenger){
         //Add the passenger Object in the passengerDb and return the passegnerId that has been returned
-        Passenger newPassenger = new Passenger();
-        newPassenger.setName(passenger.getName());
-        newPassenger.setAge(passenger.getAge());
-        newPassenger.setBookedTickets(new ArrayList<>());
+//        Passenger newPassenger = new Passenger();
+//        newPassenger.setName(passenger.getName());
+//        newPassenger.setAge(passenger.getAge());
+//        newPassenger.setBookedTickets(new ArrayList<>());
+//
+//        Passenger savedPassenger = passengerRepository.save(newPassenger);
+//        return savedPassenger.getPassengerId();
 
-        Passenger savedPassenger = passengerRepository.save(newPassenger);
-        return savedPassenger.getPassengerId();
+        passengerRepository.save(passenger);
+
+        return passenger.getPassengerId();
     }
 
 }
